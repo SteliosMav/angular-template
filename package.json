@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start:dev": "ng run angular-template:serve:developmentServe",
+    "start:stag": "ng run angular-template:serve:stagingServe",
+    "start:prod": "ng run angular-template:serve:productionServe",
+    "build:dev": "ng run angular-template:build:developmentBuild",
+    "build:stag": "ng run angular-template:build:stagingBuild",
+    "build:prod": "ng run angular-template:build:productionBuild"
   },
   "private": true,
   "dependencies": {
@@ -15,9 +21,11 @@
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
     "@angular/forms": "~13.1.0",
+    "@angular/material": "^13.3.9",
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "line-awesome": "^1.3.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
