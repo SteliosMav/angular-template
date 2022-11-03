@@ -1,12 +1,17 @@
-import { createSelector } from '@ngrx/store';
-import { fromRoot } from '../../root-store-config/root.reducer';
+import { authFeature } from './auth.reducer';
 
-const state = (state: fromRoot.State) => state.auth;
-const user = createSelector(state, (state) => state.user);
-const isLoggedIn = createSelector(state, (state) => state.isLoggedIn);
+const {
+  selectAuthState,
+  selectIsLoggedIn,
+  selectUser,
+  selectMessage,
+  selectSendingStatus,
+} = authFeature;
 
 export const authSelectors = {
-  state,
-  user,
-  isLoggedIn,
+  selectAuthState,
+  selectIsLoggedIn,
+  selectUser,
+  selectMessage,
+  selectSendingStatus,
 };
