@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IsAuthenticatedGuard } from '../shared/utils/guards/is-authenticated.guard';
+import { IsNotAuthenticatedGuard } from '../shared/utils/guards/is-not-authenticated.guard';
 
 const routes: Routes = [
   // Authentication
@@ -10,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [],
+    canActivate: [IsNotAuthenticatedGuard],
     loadChildren: () =>
       import('../auth-layout/feature/auth-layout.module').then(
         (m) => m.AuthLayoutModule
@@ -20,14 +22,14 @@ const routes: Routes = [
   // Home App
   {
     path: '',
-    canActivate: [],
+    canActivate: [IsAuthenticatedGuard],
     loadChildren: () =>
       import('../home-layout/feature/home-layout.module').then(
         (m) => m.HomeLayoutModule
       ),
   },
 
-  // Rest
+  // Remains
   {
     path: 'error',
     canActivate: [],
@@ -42,7 +44,6 @@ const routes: Routes = [
         (m) => m.PageNotFoundModule
       ),
   },
-
   {
     path: '**',
     redirectTo: 'page-not-found',
