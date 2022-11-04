@@ -83,7 +83,8 @@ export class ApiService {
       take(1),
       delay(delationTime),
       tap(() => {
-        if (throwError) throw new Error(displayMessage);
+        if (throwError)
+          throw JSON.parse(JSON.stringify(new Error(displayMessage)));
       })
     );
   }

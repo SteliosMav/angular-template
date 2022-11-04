@@ -5,6 +5,11 @@ const routes: Routes = [
   // Authentication
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: '',
     canActivate: [],
     loadChildren: () =>
       import('../auth-layout/feature/auth-layout.module').then(
@@ -37,6 +42,7 @@ const routes: Routes = [
         (m) => m.PageNotFoundModule
       ),
   },
+
   {
     path: '**',
     redirectTo: 'page-not-found',

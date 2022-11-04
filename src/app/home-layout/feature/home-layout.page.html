@@ -1,2 +1,7 @@
-<p>home-layout works!</p>
-<router-outlet></router-outlet>
+<tmpl-toolbar (logout)="onLogout()"></tmpl-toolbar>
+<main>
+  <tmpl-sidenav></tmpl-sidenav>
+  <content>
+    <router-outlet></router-outlet>
+  </content>
+</main>

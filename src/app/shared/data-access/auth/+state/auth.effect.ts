@@ -4,6 +4,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/data-access/auth/auth.service';
 import { authActions } from './auth.actions';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthEffects {
@@ -31,5 +32,21 @@ export class AuthEffects {
     )
   );
 
-  constructor(private actions$: Actions, private authService: AuthService) {}
+  goToHomepage$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authActions.loginSuccess, authActions.logoutSuccess),
+        map(({ type }) =>
+          type === authActions.loginSuccess.type ? 'reports' : 'login'
+        ),
+        tap((path) => this.router.navigateByUrl(path))
+      ),
+    { dispatch: false }
+  );
+
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 }

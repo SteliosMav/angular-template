@@ -19,14 +19,17 @@ export interface LoginCredentials {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   login(credentials: LoginCredentials) {
+    return this.api.mock(User.create());
     return this.api.post<User>('auth/login', credentials);
   }
 
   logout() {
+    return this.api.mock({});
     return this.api.post('auth/logout');
   }
 
   authenticate() {
+    return this.api.mock(User.create());
     return this.api.get<User>('auth');
   }
 

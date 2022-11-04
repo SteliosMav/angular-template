@@ -2,7 +2,7 @@ import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import { LoginCredentials, User } from '../auth.service';
 
 export const authActions = createActionGroup({
-  source: '[Auth]',
+  source: 'Auth',
   events: {
     Login: props<{ credentials: LoginCredentials }>(),
     'Login Success': props<{ user: User }>(),
