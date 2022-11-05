@@ -12,6 +12,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('../../login/feature/login.module').then((m) => m.LoginModule),
       },
+      {
+        path: 'register',
+        loadChildren: () =>
+          import('../../register/feature/register.module').then(
+            (m) => m.RegisterModule
+          ),
+      },
     ],
   },
 ];

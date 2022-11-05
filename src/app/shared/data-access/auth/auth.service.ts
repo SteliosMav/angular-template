@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   authenticate() {
-    return this.api.mock(User.create());
+    return this.api.mock(User.create(), { throwError: true });
     return this.api.get<User>('auth');
   }
 

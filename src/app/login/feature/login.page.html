@@ -1,13 +1,15 @@
-<h5>Login Form</h5>
-<hr />
-<form [formGroup]="form">
-  <div>
-    <label>Email</label>
-    <input formControlName="email" type="text" />
-  </div>
-  <div>
-    <label>Password</label>
-    <input formControlName="password" type="password" />
-  </div>
-  <button (click)="send()">Login</button>
-</form>
+<article class="flex flex-col items-center">
+  <h4>Login Form</h4>
+  <hr />
+  <form [formGroup]="form">
+    <fieldset>
+      <label>Email</label>
+      <input formControlName="email" type="text" />
+    </fieldset>
+    <fieldset>
+      <label>Password</label>
+      <input formControlName="password" type="password" />
+    </fieldset>
+    <button (click)="send()">Login</button>
+  </form>
+</article>
