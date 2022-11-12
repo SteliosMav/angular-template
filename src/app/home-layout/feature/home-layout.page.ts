@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthFacade } from 'src/app/shared/data-access/auth/auth.facade';
+import { AuthFacade } from 'src/app/shared/data-access/auth/+state/auth.facade';
 
 @Component({
   templateUrl: './home-layout.page.html',

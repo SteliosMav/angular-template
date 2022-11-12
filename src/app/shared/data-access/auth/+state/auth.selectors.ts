@@ -1,17 +1,23 @@
-import { authFeature } from './auth.reducer';
+/**
+ * Using "createFeature" method from ngrx-store, creates automatically
+ * selectors that can be accessed as shown:
+ *   authFeature.selectAuthState
+ */
 
-const {
-  selectAuthState,
-  selectIsLoggedIn,
-  selectUser,
-  selectMessage,
-  selectSendingStatus,
-} = authFeature;
+// import { authFeature } from './auth.reducer';
 
-export const authSelectors = {
-  selectAuthState,
-  selectIsLoggedIn,
-  selectUser,
-  selectMessage,
-  selectSendingStatus,
-};
+// const {
+//   selectAuthState,
+//   selectIsLoggedIn,
+//   selectUser,
+//   selectMessage,
+//   selectSendingStatus,
+// } = authFeature;
+
+// export const authSelectors = {
+//   selectAuthState,
+//   selectIsLoggedIn,
+//   selectUser,
+//   selectMessage,
+//   selectSendingStatus,
+// };

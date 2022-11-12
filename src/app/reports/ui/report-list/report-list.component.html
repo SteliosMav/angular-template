@@ -1,0 +1,35 @@
+<div *ngFor="let report of reports; index as idx" class="card">
+  <div class="title">{{ idx + 1 }}) {{ report.title }}</div>
+  <div class="action-buttons">
+    <span>
+      <button
+        (click)="action.next({ type: 'VIEW', id: report.id })"
+        style="color: blue"
+      >
+        View
+      </button>
+      &nbsp;
+      <button
+        (click)="action.next({ type: 'EDIT', id: report.id })"
+        style="color: green"
+      >
+        Edit
+      </button>
+    </span>
+    <button
+      (click)="action.next({ type: 'REMOVE', id: report.id })"
+      style="color: red"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+<div *ngIf="!foundResults">No results..</div>
+
+<strong *ngIf="fetchingStatus === 'LOADING'; else loadMoreTemplate"
+  >LOADING</strong
+>
+
+<ng-template #loadMoreTemplate>
+  <button (click)="loadMore.next(true)">Load more</button>
+</ng-template>

@@ -1,0 +1,44 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0rem;
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+li {
+  padding: 8px 1rem;
+  border-radius: 8px;
+  color: #293744;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border-radius: 100%;
+  background-color: rgba(214, 214, 214, 0);
+  box-shadow: none;
+  color: inherit;
+  &:hover {
+    background-color: #7b7b7b1c;
+    filter: contrast(120%) opacity(90%);
+  }
+  &:active {
+    filter: opacity(50%);
+  }
+}
+
+.success {
+  border: solid 2px rgb(0, 174, 0);
+  background-color: rgb(199, 228, 199);
+}
+.error {
+  border: solid 2px rgb(174, 0, 0);
+  background-color: rgb(228, 199, 199);
+}

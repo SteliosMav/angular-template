@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AuthFacade } from 'src/app/shared/data-access/auth/auth.facade';
+import { AuthFacade } from 'src/app/shared/data-access/auth/+state/auth.facade';
 import { LoginCredentials } from 'src/app/shared/data-access/auth/auth.service';
 
 @Component({

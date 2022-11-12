@@ -1,40 +1,21 @@
-<header>Report-dashboard Header</header>
-<main>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-  <p>Some content to overflow</p>
-</main>
+<!-- Letting angular template handle subscriptions -->
+<ng-container *ngIf="effects$ | async"></ng-container>
+
+<ng-container *ngIf="viewModel$ | async as vm">
+  <tmpl-dashboard-header
+    itemName="Reports"
+    [itemCount]="vm.reportCount"
+  ></tmpl-dashboard-header>
+
+  <main class="flex h-full overflow-auto">
+    <tmpl-sidebar-filters (filter)="onFilter()"></tmpl-sidebar-filters>
+
+    <tmpl-report-list
+      [reports]="vm.reports"
+      [fetchingStatus]="vm.fetchingStatus"
+      [foundResults]="vm.foundResults"
+      (loadMore)="onLoadMore()"
+      (action)="onAction($event.type, $event.id)"
+    ></tmpl-report-list>
+  </main>
+</ng-container>

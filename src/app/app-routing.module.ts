@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IsAuthenticatedGuard } from '../shared/utils/guards/is-authenticated.guard';
-import { IsNotAuthenticatedGuard } from '../shared/utils/guards/is-not-authenticated.guard';
+import { IsAuthenticatedGuard } from 'src/app/shared/utils/guards/is-authenticated.guard';
+import { IsNotAuthenticatedGuard } from 'src/app/shared/utils/guards/is-not-authenticated.guard';
 
 const routes: Routes = [
   // Authentication
@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '',
     canActivate: [IsNotAuthenticatedGuard],
     loadChildren: () =>
-      import('../auth-layout/feature/auth-layout.module').then(
+      import('src/app/auth-layout/feature/auth-layout.module').then(
         (m) => m.AuthLayoutModule
       ),
   },
@@ -24,7 +24,7 @@ const routes: Routes = [
     path: '',
     canActivate: [IsAuthenticatedGuard],
     loadChildren: () =>
-      import('../home-layout/feature/home-layout.module').then(
+      import('src/app/home-layout/feature/home-layout.module').then(
         (m) => m.HomeLayoutModule
       ),
   },
@@ -34,13 +34,13 @@ const routes: Routes = [
     path: 'error',
     canActivate: [],
     loadChildren: () =>
-      import('../error/error.module').then((m) => m.ErrorModule),
+      import('src/app/error/error.module').then((m) => m.ErrorModule),
   },
   {
     path: 'page-not-found',
     canActivate: [],
     loadChildren: () =>
-      import('../page-not-found/page-not-found.module').then(
+      import('src/app/page-not-found/page-not-found.module').then(
         (m) => m.PageNotFoundModule
       ),
   },

@@ -1,0 +1,10 @@
+<!-- New Messages -->
+<div class="absolute">
+  <tmpl-messages
+    *ngIf="messages$ | async as messages"
+    [messages]="messages"
+    (removeMessage)="onRemoveMessage($event)"
+  ></tmpl-messages>
+</div>
+
+<router-outlet></router-outlet>

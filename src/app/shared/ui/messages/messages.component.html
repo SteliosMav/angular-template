@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let message of messages" [class]="message.cssClass">
+    <span class="flex items-center gap-2">
+      <i [class]="message.icon"></i>
+      <span> {{ message.text }}</span></span
+    >
+    <button (click)="removeMessage.next(message.id)">
+      <i class="las la-times"></i>
+    </button>
+  </li>
+</ul>

@@ -6,10 +6,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { AuthEffects } from '../shared/data-access/auth/+state/auth.effect';
-import { authFeature } from '../shared/data-access/auth/+state/auth.reducer';
+import { AuthEffects } from 'src/app/shared/data-access/auth/+state/auth.effect';
+import { authFeature } from 'src/app/shared/data-access/auth/+state/auth.reducer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MessagesModule } from 'src/app/shared/ui/messages/messages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,9 @@ import { AppComponent } from './app.component';
 
     AppRoutingModule,
     HttpClientModule,
+
+    // UI
+    MessagesModule,
 
     // NgRx - Store
     StoreModule.forRoot(

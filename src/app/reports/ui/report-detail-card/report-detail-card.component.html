@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="fetchingStatus">
+  <div *ngSwitchCase="'SUCCESS'">
+    <h1>{{ alert.title }}</h1>
+    <h3>{{ alert.description }}</h3>
+  </div>
+
+  <div *ngSwitchCase="'ERROR'">Error occured!</div>
+
+  <p *ngSwitchCase="'LOADING'">Loading...</p>
+</ng-container>
